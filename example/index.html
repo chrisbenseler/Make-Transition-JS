@@ -26,8 +26,17 @@
 	}
 	li.sliding {
 		opacity: 1;
-		-moz-transform: rotate(0) translate(0, 0);
+		-moz-transform: rotate(0) translate(0, 0); -webkit-transform: rotate(0) translate(0, 0); transform: rotate(0) translate(0, 0);
 		
+	}
+	ul.myslide1 {
+		background-color: #FF0000;
+	}
+	ul.myslide2 {
+		background-color: #00FF00;
+	}
+	ul.myslide3 {
+		background-color: #0000FF;
 	}
 	</style>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -46,9 +55,9 @@
 </head>
 <body>
 <ul id="banner">
-	<li data-bgcolor="#FF0000">Slide 1<br />Slide 1<br />Slide 1<br />Slide 1<br />Slide 1</li>
-	<li data-bgcolor="#00FF00">Slide 2<br />Slide 2<br />Slide 2<br />Slide 2<br />Slide 2</li>
-	<li data-bgcolor="#0000FF">Slide 3<br />Slide 3<br />Slide 3<br />Slide 3<br />Slide 3</li>
+	<li data-parentclass="myslide1">Slide 1<br />Slide 1<br />Slide 1<br />Slide 1<br />Slide 1</li>
+	<li data-parentclass="myslide2">Slide 2<br />Slide 2<br />Slide 2<br />Slide 2<br />Slide 2</li>
+	<li data-parentclass="myslide3">Slide 3<br />Slide 3<br />Slide 3<br />Slide 3<br />Slide 3</li>
 </ul>
 </body>
 </html>

@@ -18,6 +18,7 @@ var MakeTransition = function(custom_options) {
 	var slides = custom_options.element.getElementsByTagName("li");
 	var size = slides.length;
 	var current = -1;
+	var current_parent_class = null;
 
 	var el = $(custom_options.element);
 	//force overflow to hidden
@@ -36,8 +37,11 @@ var MakeTransition = function(custom_options) {
 			$(slides[size - 1]).removeClass(options.class_name);	
 		}
 
-		if($(slides[current]).data("bgcolor")) {
-			el.css("background-color", $(slides[current]).data("bgcolor"));
+		if($(slides[current]).data("parentclass")) {
+			if(current_parent_class)
+				el.removeClass(current_parent_class);
+			current_parent_class = $(slides[current]).data("parentclass");
+			el.addClass(current_parent_class);
 		}
 
 		setTimeout(function() {
