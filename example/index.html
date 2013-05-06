@@ -4,25 +4,30 @@
 	<link rel="stylesheet" href="../src/maketransition.css" />
 	<style>
 	ul {
-		border:1px solid #FFFF00;
-		margin-top: 200px;
+		height: 300px;
+		width: 500px;
+		margin: 200px auto 0;
+
 	}
 
-	ul.myslide1 {
-		background-color: #FF0000;
+	li span {
+		border: 1px solid #000000;
+		background-color: #FFFFFF;
+		display: inline-block;
+		margin-top: 180px;
+		margin-left: 50px;
+		padding: 10px 20px;
+		font-size: 18px;
+
 	}
-	ul.myslide2 {
-		background-color: #00FF00;
-	}
-	ul.myslide3 {
-		background-color: #0000FF;
-	}
+
 	</style>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="../src/maketransition.js"></script>
 	<script>
 
 	window.onload = function() {
+		
 		var slider = new MakeTransition({
 			element : document.getElementById("maketransition-list")
 		});
@@ -32,10 +37,11 @@
 	</script>
 </head>
 <body>
+
 <ul id="maketransition-list">
-	<li data-parentclass="myslide1">Slide 1<br />Slide 1<br />Slide 1<br />Slide 1<br />Slide 1</li>
-	<li data-parentclass="myslide2">Slide 2<br />Slide 2<br />Slide 2<br />Slide 2<br />Slide 2</li>
-	<li data-parentclass="myslide3">Slide 3<br />Slide 3<br />Slide 3<br />Slide 3<br />Slide 3</li>
+	<li data-parentimg="samples/sabrina.jpg"><span>Eu sou a Sabrina Sato</span></li>
+	<li data-parentimg="samples/kat.jpg"><span>Eu sou a Kat von D</span></li>
+	<li data-parentimg="samples/kaley.jpg"><span>E eu, a Kaley Cuoco</span></li>
 </ul>
 </body>
 </html>

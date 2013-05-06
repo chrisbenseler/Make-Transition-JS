@@ -24,28 +24,50 @@ var MakeTransition = function(custom_options) {
 	//force overflow to hidden
 	el.css("overflow", "hidden");
 
+	$(el).before("<div id='maketransition-bg-parent'></div>");
+
+	var handler = $("div#maketransition-bg-parent");
+	var bgs = [];
+	$(slides).each(function(index, item) {
+		if(!$(item).data("parentimg")) {
+			handler.append("<div></div>");
+		} else {
+			handler.append("<div><img src='" + $(item).data("parentimg") + "' /></div>");
+		}
+	});
+	handler.css({
+		top: el.offset().top,
+		left: el.offset().left,
+		width: el.width(),
+		height: el.height()
+	});
+
+	var divs = handler.children("div");
+
 	(navigate = function() {
 		
 		current++;
+
 		
 		if(current<size) {
 			$(slides[current]).addClass(options.class_name);
 			$(slides[current - 1]).removeClass(options.class_name);	
+
+			$(divs[current]).addClass("maketransition-sliding-bg");
+			$(divs[current - 1]).removeClass("maketransition-sliding-bg");
 		} else {
 			current = 0;
 			$(slides[current]).addClass(options.class_name);
-			$(slides[size - 1]).removeClass(options.class_name);	
-		}
+			$(slides[size - 1]).removeClass(options.class_name);
 
-		if($(slides[current]).data("parentclass")) {
-			if(current_parent_class)
-				el.removeClass(current_parent_class);
-			current_parent_class = $(slides[current]).data("parentclass");
-			el.addClass(current_parent_class);
+			$(divs[current]).addClass("maketransition-sliding-bg");
+			$(divs[size - 1]).removeClass("maketransition-sliding-bg");
 		}
 
 		setTimeout(function() {
 			navigate();
+			
+
 		}, options.timeout);
 	}).call();
 };
