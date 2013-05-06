@@ -4,7 +4,7 @@ var MakeTransition = function(custom_options) {
 		return false;
 
 	var options = {
-		class_name : "",
+		class_name : "maketransition-sliding-item",
 		timeout: 5000
 	};
 
