@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>Transition</title>
+	<style>
+	ul {
+		list-style-type: none;
+		border:1px solid #FFFF00;
+		height: 300px;
+		margin: 0;
+		padding: 0;
+		margin-top: 200px;
+		-moz-transform: rotate(0); -webkit-transform: rotate(0); transform: rotate(0);
+		-moz-transition: all 2s ease; -webkit-transition: all 2s ease; transition: all 2s ease;
+	}
+	
+	li {
+		float: left;
+		clear: none;
+		width: 98%;
+		height: 300px;
+		position: absolute;
+		opacity: 0;
+		text-align: center;
+		-moz-transition: all 3s ease; -webkit-transition: all 3s ease; transition: all 3s ease;
+		-moz-transform: rotate(30deg) translate(-300px, -700px); -webkit-transform: rotate(30deg) translate(-300px, -700px); transform: rotate(30deg) translate(-300px, -700px);
+	}
+	li.sliding {
+		opacity: 1;
+		-moz-transform: rotate(0) translate(0, 0);
+		
+	}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="../src/maketransition.js"></script>
+	<script>
+
+	window.onload = function() {
+		var slider = new MakeTransition({
+			class_name : "sliding",
+			element : document.getElementById("banner")
+		});
+	};
+		
+
+	</script>
+</head>
+<body>
+<ul id="banner">
+	<li data-bgcolor="#FF0000">Slide 1<br />Slide 1<br />Slide 1<br />Slide 1<br />Slide 1</li>
+	<li data-bgcolor="#00FF00">Slide 2<br />Slide 2<br />Slide 2<br />Slide 2<br />Slide 2</li>
+	<li data-bgcolor="#0000FF">Slide 3<br />Slide 3<br />Slide 3<br />Slide 3<br />Slide 3</li>
+</ul>
+</body>
+</html>
