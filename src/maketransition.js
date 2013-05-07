@@ -41,11 +41,10 @@ var MakeTransition = function(custom_options) {
 		width: el.width(),
 		height: el.height()
 	});
-
+	
 	var divs = handler.children("div");
 
-	(navigate = function() {
-		
+	var navigate = function() {
 		current++;
 
 		
@@ -69,5 +68,6 @@ var MakeTransition = function(custom_options) {
 			
 
 		}, options.timeout);
-	}).call();
+	};
+	navigate();
 };
