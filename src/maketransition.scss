@@ -43,6 +43,7 @@ div#maketransition-bg-parent {
 		height: 100%;
 		opacity: 0;
 		display: none\9;
+		-moz-transition: all 2s ease; -webkit-transition: all 2s ease; transition: all 2s ease;
 
 		img {
 			width: 100%;
@@ -52,9 +53,10 @@ div#maketransition-bg-parent {
 		&.maketransition-sliding-bg {
 			opacity: 1;
 			display: block\9;
-			-moz-transition: all 2s ease; -webkit-transition: all 2s ease; transition: all 2s ease;
+			
 		}
 		
 	}
 }
+
 	
