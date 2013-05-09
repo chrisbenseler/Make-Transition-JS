@@ -19,6 +19,7 @@ var MakeTransition = function(custom_options) {
 	var slides = custom_options.element.getElementsByTagName("li");
 	var size = slides.length;
 	var current = -1;
+	var current_parent_class = null;
 
 	var el = $(custom_options.element);
 	//force overflow to hidden
@@ -52,15 +53,15 @@ var MakeTransition = function(custom_options) {
 			$(slides[current]).addClass(options.class_name);
 			$(slides[current - 1]).removeClass(options.class_name);	
 
-			$(divs[current]).addClass(options.bgparent_class_name);
-			$(divs[current - 1]).removeClass(options.bgparent_class_name);
+			$(divs[current]).addClass("maketransition-sliding-bg");
+			$(divs[current - 1]).removeClass("maketransition-sliding-bg");
 		} else {
 			current = 0;
 			$(slides[current]).addClass(options.class_name);
 			$(slides[size - 1]).removeClass(options.class_name);
 
-			$(divs[current]).addClass(options.bgparent_class_name);
-			$(divs[size - 1]).removeClass(options.bgparent_class_name);
+			$(divs[current]).addClass("maketransition-sliding-bg");
+			$(divs[size - 1]).removeClass("maketransition-sliding-bg");
 		}
 
 		setTimeout(function() {
