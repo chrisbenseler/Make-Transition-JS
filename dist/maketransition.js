@@ -19,7 +19,6 @@ var MakeTransition = function(custom_options) {
 	var slides = custom_options.element.getElementsByTagName("li");
 	var size = slides.length;
 	var current = -1;
-	var current_parent_class = null;
 
 	var el = $(custom_options.element);
 	//force overflow to hidden
