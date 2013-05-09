@@ -5,6 +5,7 @@ var MakeTransition = function(custom_options) {
 
 	var options = {
 		class_name : "maketransition-sliding-item",
+		bgparent_class_name : "maketransition-bg-parent",
 		timeout: 5000
 	};
 
@@ -24,9 +25,9 @@ var MakeTransition = function(custom_options) {
 	//force overflow to hidden
 	el.css("overflow", "hidden");
 
-	$(el).before("<div id='maketransition-bg-parent'></div>");
+	$(el).before("<div id='" + options.bgparent_class_name + "'></div>");
 
-	var handler = $("div#maketransition-bg-parent");
+	var handler = $("div#" + options.bgparent_class_name);
 	var bgs = [];
 	$(slides).each(function(index, item) {
 		if(!$(item).data("parentimg")) {
@@ -52,15 +53,15 @@ var MakeTransition = function(custom_options) {
 			$(slides[current]).addClass(options.class_name);
 			$(slides[current - 1]).removeClass(options.class_name);	
 
-			$(divs[current]).addClass("maketransition-sliding-bg");
-			$(divs[current - 1]).removeClass("maketransition-sliding-bg");
+			$(divs[current]).addClass(options.bgparent_class_name);
+			$(divs[current - 1]).removeClass(options.bgparent_class_name);
 		} else {
 			current = 0;
 			$(slides[current]).addClass(options.class_name);
 			$(slides[size - 1]).removeClass(options.class_name);
 
-			$(divs[current]).addClass("maketransition-sliding-bg");
-			$(divs[size - 1]).removeClass("maketransition-sliding-bg");
+			$(divs[current]).addClass(options.bgparent_class_name);
+			$(divs[size - 1]).removeClass(options.bgparent_class_name);
 		}
 
 		setTimeout(function() {
