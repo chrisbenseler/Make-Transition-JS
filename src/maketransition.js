@@ -23,9 +23,9 @@ var MakeTransition = function(custom_options) {
 
 	var el = $(custom_options.element);
 	//force overflow to hidden
-	el.css("overflow", "hidden");
-
-	$(el).before("<div id='" + options.bgparent_class_name + "'></div>");
+	el
+		.css("overflow", "hidden")
+		.before("<div id='" + options.bgparent_class_name + "'></div>");
 
 	var handler = $("div#" + options.bgparent_class_name);
 	var bgs = [];
