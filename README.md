@@ -1,6 +1,5 @@
 Make Transition JS
 ==================
-
 Javascript component to make transitions from li elements
 
 How it works
@@ -9,8 +8,14 @@ The component adds and removes a css class (default name: sliding) to the li's c
 
 Usage
 =====
-Later
-
+- include maketransition.css and maketransition.min.js from dist/ folder to your project
+- instantiate the MakeSlider object passing an ul element as element
+<code>
+var slider = new MakeTransition({
+	element : document.getElementById("maketransition-list")
+});
+</code>
+- transitions may be changed in css
 
 Notes
 ======
